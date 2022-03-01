@@ -1,11 +1,11 @@
 # stivale2-cmake-barebones
-An example stivale2 kernel with CMake build system.
+A barebones example stivale2 kernel with CMake build system.
 
 ## Building
 ```sh
 $ mkdir build
 $ cd build
-$ cmake .. -G "Ninja"
+$ cmake .. -GNinja
 $ ninja
 ```
 

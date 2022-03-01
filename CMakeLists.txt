@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 set(TOOLCHAIN "clang")
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/${TOOLCHAIN}-toolchain.cmake)
-project(stivale2-cmake-boilerplate VERSION 0.0.1 DESCRIPTION "An example stivale2 kernel with CMake build system.")
+project(stivale2-cmake-barebones VERSION 0.0.1 DESCRIPTION "A barebones example stivale2 kernel with CMake build system.")
 enable_language(ASM_NASM)
 
 set(CMAKE_EXECUTABLE_SUFFIX ".elf")
@@ -26,6 +26,7 @@ target_compile_options(kernel PUBLIC $<$<COMPILE_LANGUAGE:C,CXX>:
     -mno-avx2
     -mno-avx512f
     -mno-red-zone
+    -msoft-float
     -mcmodel=kernel
 >)
 
