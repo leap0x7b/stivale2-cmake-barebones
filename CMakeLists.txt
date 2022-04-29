@@ -9,8 +9,10 @@ set(CMAKE_EXECUTABLE_SUFFIX ".elf")
 add_executable(kernel src/main.c)
 
 target_compile_options(kernel PUBLIC $<$<COMPILE_LANGUAGE:C,CXX>:
+    -fno-stack-check
     -fno-stack-protector
     -fno-pic
+    -fno-pie
     -mabi=sysv
     -mno-80387
     -mno-mmx
